@@ -1,0 +1,13 @@
+<h1>Emails#show</h1>
+<p>Find me in app/views/emails/show.html.erb</p>
+
+<%= turbo_stream_from @email %>
+<div id="<%= dom_id(@email) %>">
+  <%= render @email %>
+</div>
+
+<%= turbo_frame_tag "my_show_frame" do %>
+  <p>From : <%= @email.email %> (ID <%= @email.id %>)</p> 
+  <p>Objet : <%= @email.object %></p>
+  <p>Contenu : <%= @email.body %></p>
+<% end %>

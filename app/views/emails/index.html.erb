@@ -1,0 +1,36 @@
+<h1>Emails reçus</h1>
+
+
+
+
+<div style="margin-left:20px">
+  <%= button_to "Recevoir un email", emails_path, method: :post %>       
+</div>   
+
+<div style="display:flex;width:1000px;border: 1px grey solid; margin:20px;padding-bottom:30px;padding-top:30px;">
+
+  <div style="display:flex; flex-direction:column; align-items:center; border-right: 1px grey solid; width:500px;">
+    <div style="border-bottom: 1px grey solid; padding:10px; margin:10px;">
+      Liste des e-mails
+    </div>
+    <div style="padding:1px; margin:1px;">
+
+    <div id="all_email">
+      <%= render @emails %>
+    </div>
+
+    </div>
+  </div>
+
+  <div style="display:flex; flex-direction:column; align-items:center; width:500px;">
+    <div style="border-bottom: 1px grey solid; padding:10px; margin:10px;">
+      Contenu de l'email
+    </div>
+    <div style="padding:10px; margin:10px;">
+      <%= turbo_frame_tag 'my_show_frame' do %>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+

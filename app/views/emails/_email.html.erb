@@ -1,0 +1,4 @@
+<li>  
+  <%= email.object %> (ID <%= email.id %>) : 
+  <%= link_to "Ouvrir", email_path(email.id), data: { turbo_frame: 'my_show_frame' }%>
+</li>
